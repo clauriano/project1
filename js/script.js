@@ -1,17 +1,31 @@
-// FSJS - Random Quote Generator
-
-// Create the array of quote objects and name it quotes
 
 
+var quotes = [
+  {
+    quote:"Be loyal to those who are loyal to you. ",name:"John Cena"
+    },
+  {
+    quote:"To all my little Hulkamaniacs, say your prayers, take your vitamins and you will never go wrong.",name:"Hulk Hogan"
+    }
+  ];
+  console.log(quotes);
 
-// Create the getRandomQuuote function and name it getRandomQuote
+  function getRandomQuote (array){
+    for (var i = 0; i < array.length; i += 1){
+        var saying = array[i].quote
+        var person = array[i].name
+    console.log(saying + person);
+    }
 
-
-
-// Create the printQuote funtion and name it printQuote
-
-
-
-// This event listener will respond to "Show another quote" button clicks
-// when user clicks anywhere on the button, the "printQuote" function is called
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+  
+  }
+  getRandomQuote(quotes);
+  
+  
+  function printQuote (){
+    document.write("<p class = quote >" + saying + "</p>");
+    document.write("<p class = source>" + person + "</p>");
+  }
+  
+  
+  document.getElementById('loadQuote').addEventListener("click", printQuote, false);

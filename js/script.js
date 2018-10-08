@@ -2,30 +2,32 @@
 
 var quotes = [
   {
-    quote:"Be loyal to those who are loyal to you. ",name:"John Cena"
+    quote:"Be loyal to those who are loyal to you. ", name:"John Cena"
     },
   {
-    quote:"To all my little Hulkamaniacs, say your prayers, take your vitamins and you will never go wrong.",name:"Hulk Hogan"
+    quote:"To all my little Hulkamaniacs, say your prayers, take your vitamins and you will never go wrong.", name:"Hulk Hogan"
+    },
+  {
+      quote:"Oh it\'s true, it\'s damn true. ", name:"Kurt Angle"
+    },
+  {
+      quote:"Everything is impossible, until someone crazy enough comes along and makes it possible. ", name:"CT Fletcher"
     }
   ];
-  console.log(quotes);
+  console.log(quotes[1].quote);
 
-  function getRandomQuote (array){
-    for (var i = 0; i < array.length; i += 1){
-        var saying = array[i].quote
-        var person = array[i].name
-    console.log(saying + person);
-    }
-
+  function getRandomQuote (){
+   var randomNumber = Math.floor(Math.random() * quotes.length );
+    return "<p class = quote >" + quotes[randomNumber].quote + "</p>" + "<p class = source >" + quotes[randomNumber].name + "</p>";
   
   }
-  getRandomQuote(quotes);
-  
-  
+
+
   function printQuote (){
-    document.write("<p class = quote >" + saying + "</p>");
-    document.write("<p class = source>" + person + "</p>");
+    saying = getRandomQuote();
+    var output = document.getElementById('quote-box');
+    output.innerHTML = saying
   }
-  
+
   
   document.getElementById('loadQuote').addEventListener("click", printQuote, false);

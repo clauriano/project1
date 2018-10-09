@@ -1,5 +1,5 @@
 
-//Array array quotes is an array of objects with a quote and the source
+//An array of quotes is an array of objects with a quote and the source
 var quotes = [
   {
     quote:"Be loyal to those who are loyal to you. ", source:"John Cena"
